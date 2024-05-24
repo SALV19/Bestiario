@@ -25,9 +25,11 @@ public:
     void set_color_pelo(std::string _color) { color_pelo = _color; }
 
     std::string atacar();
-    void comer();
-    void habilidad_esp();
-    void moverse();
+    std::string comer();
+    std::string habilidad_esp();
+    std::string moverse();
+
+    std::string get_stats();
 };
 
 Mamifero::Mamifero(std::string _nombre,
@@ -41,6 +43,32 @@ Mamifero::Mamifero(std::string _nombre,
     colas = _colas;
     color_pelo = _color_pelo;
     set_raza("mamifero");
+}
+
+std::string Mamifero::atacar()
+{
+    std::string ataque = get_nombre() + " tiene una mordida muy poderosa";
+    return ataque;
+}
+std::string Mamifero::comer()
+{
+    std::string comida = get_nombre() + " come carne.";
+    return comida;
+}
+std::string Mamifero::habilidad_esp()
+{
+    std::string habilidad = get_nombre() + " tiene " + std::to_string(colas) + " colas y es de color " + color_pelo;
+    return habilidad;
+}
+std::string Mamifero::moverse()
+{
+    std::string mover = get_nombre() + " puede correr muy rapido y es hagil";
+    return mover;
+}
+
+std::string Mamifero::get_stats()
+{
+    return Bestia::get_stats() + "\nColas" + std::to_string(colas) + "\nColor" + color_pelo;
 }
 
 #endif

@@ -17,14 +17,16 @@ public:
         int _nivel, int _mana, int _patas,
         bool _vision_nocturna);
 
-    bool get_pico() { return vision_nocturna; }
+    bool get_vision_nocturna() { return vision_nocturna; }
 
-    void set_pico(bool _vision_nocturna) { vision_nocturna = _vision_nocturna; }
+    void set_vision_nocturna(bool _vision_nocturna) { vision_nocturna = _vision_nocturna; }
 
     std::string atacar();
-    void comer();
-    void habilidad_esp();
-    void moverse();
+    std::string comer();
+    std::string habilidad_esp();
+    std::string moverse();
+
+    std::string get_stats();
 };
 
 Ave::Ave(std::string _nombre,
@@ -41,15 +43,38 @@ Ave::Ave(std::string _nombre,
 
 std::string Ave::atacar()
 {
+    std::string ataque = get_nombre() + " vuela en picada para dar un zarpazo.";
+    return ataque;
 }
-void Ave::comer()
+std::string Ave::comer()
 {
+    std::string comida = get_nombre() + " le gusta comer carne y algunas semillas.";
+    return comida;
 }
-void Ave::habilidad_esp()
+std::string Ave::habilidad_esp()
 {
+    std::string habilidad;
+    if (vision_nocturna)
+    {
+        habilidad = get_nombre() + " puede usar vision nocturna para cazar por la noche.";
+    }
+    else
+    {
+        habilidad = get_nombre() + " no tiene visión nocturna para ver por la noche";
+    }
+    return habilidad;
 }
-void Ave::moverse()
+std::string Ave::moverse()
 {
+    if (get_patas() >= 4)
+    {
+        return get_nombre() + " puede volar por los aires y puede correr a altas velocidades.";
+    }
+    return get_nombre() + " puede volar por los aires";
+}
+std::string Ave::get_stats()
+{
+    return Bestia::get_stats() + "\nVision Nocturna: " + std::to_string(vision_nocturna);
 }
 
 #endif
