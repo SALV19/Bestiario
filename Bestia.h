@@ -6,7 +6,7 @@
 
 class Bestia
 {
-private:
+protected:
     std::string nombre, raza;
     int nivel, mana, patas;
 
