@@ -88,7 +88,7 @@ std::string Reptil::moverse()
 
 std::string Reptil::get_stats()
 {
-    return Bestia::get_stats() + "\nEscamas" + std::to_string(escamas) + "\nAlas" + std::to_string(alas) + "\nElemento" + elemento;
+    return Bestia::get_stats() + "\nEscamas " + std::to_string(escamas) + "\nAlas " + std::to_string(alas) + "\nElemento " + elemento;
 }
 
 #endif
