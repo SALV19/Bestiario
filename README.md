@@ -6,4 +6,4 @@ Problema:
   
 
 Donde puede fallar:
-  Podría llegar a fallar si se crean diferentes objetos pero con el mismo nombre. Se puede evitar usando la ID del objeto. 
+  Podría llegar a fallar si se crean diferentes objetos pero con el mismo nombre. O si en la entrada de valores se ingresa un valor diferente al valor esperado de enttrada. Ejemplo: Entrada de nivel es numérico, en cambio, si se ingresa un valor tipo string puede causar que el programa falle.  
